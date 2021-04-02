@@ -6,12 +6,12 @@ namespace UniversalConnector\API\Magento2;
 use UniversalConnector\API\AbstractAPI;
 use UniversalConnector\API\Exception\PipeException;
 
+use UniversalConnector\API\Magento2\Context;
 use UniversalConnector\API\Magento2\Magento2Pipe;
 use UniversalConnector\API\Magento2\EndPoints;
 use UniversalConnector\API\Magento2\RepositoryProvider;
 
 use UniversalConnector\Service\Sender\CurlSender;
-
 
 class Magento2API extends AbstractAPI {
 	use EndPoints;
@@ -24,6 +24,7 @@ class Magento2API extends AbstractAPI {
 	) 
 	{
 		$this->repoProvider = $provider;
+		$this->context = new Context();
 		parent::__construct($HTTPservice);
 	}
 
@@ -32,6 +33,8 @@ class Magento2API extends AbstractAPI {
 		$repository->hello();
 	}
 
+
+	
 
 	/**
 	 * SECURITY
