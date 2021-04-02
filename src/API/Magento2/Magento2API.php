@@ -34,7 +34,9 @@ class Magento2API extends AbstractAPI {
 	}
 
 
-	
+	/**
+	 * Context 
+	 */
 
 	/**
 	 * SECURITY

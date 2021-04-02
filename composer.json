@@ -1,6 +1,6 @@
 {
     "name": "boeki/universal-connector",
-    "type": "composer-plugin",
+    "type": "library",
     "authors": [
         {
             "name": "jamesstandbridge",
@@ -19,3 +19,4 @@
         }
     }
 }
+
