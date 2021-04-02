@@ -1,12 +1,12 @@
 <?php 
 
-namespace App\API\Magento2;
+namespace UniversalConnector\API\Magento2;
 
-use App\Service\Sender\CurlSender;
+use UniversalConnector\Service\Sender\CurlSender;
 
-use App\API\Magento2\Repository\PriceRepository;
+use UniversalConnector\API\Magento2\Repository\PriceRepository;
 
-use App\API\Pipe;
+use UniversalConnector\API\Pipe;
 
 class RepositoryProvider {
 	private $HTTPservice;

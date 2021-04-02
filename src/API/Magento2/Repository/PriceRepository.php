@@ -1,10 +1,10 @@
 <?php 
 
-namespace App\API\Magento2\Repository;
+namespace UniversalConnector\API\Magento2\Repository;
 
-use App\API\AbstractRepository;
-use App\Service\Sender\CurlSender;
-use App\API\Pipe;
+use UniversalConnector\API\AbstractRepository;
+use UniversalConnector\Service\Sender\CurlSender;
+use UniversalConnector\API\Pipe;
 
 class PriceRepository extends AbstractRepository {
 

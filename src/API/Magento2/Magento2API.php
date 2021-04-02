@@ -1,16 +1,16 @@
 <?php 
 
 
-namespace App\API\Magento2;
+namespace UniversalConnector\API\Magento2;
 
-use App\API\AbstractAPI;
-use App\API\Exception\PipeException;
+use UniversalConnector\API\AbstractAPI;
+use UniversalConnector\API\Exception\PipeException;
 
-use App\API\Magento2\Magento2Pipe;
-use App\API\Magento2\EndPoints;
-use App\API\Magento2\RepositoryProvider;
+use UniversalConnector\API\Magento2\Magento2Pipe;
+use UniversalConnector\API\Magento2\EndPoints;
+use UniversalConnector\API\Magento2\RepositoryProvider;
 
-use App\Service\Sender\CurlSender;
+use UniversalConnector\Service\Sender\CurlSender;
 
 
 class Magento2API extends AbstractAPI {

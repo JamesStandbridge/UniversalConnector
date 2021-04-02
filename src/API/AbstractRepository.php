@@ -1,11 +1,11 @@
 <?php 
 
-namespace App\API;
+namespace UniversalConnector\API;
 
-use App\Service\Sender\CurlSender;
-use App\API\Magento2\EndPoints;
+use UniversalConnector\Service\Sender\CurlSender;
+use UniversalConnector\API\Magento2\EndPoints;
 
-use App\API\Pipe;
+use UniversalConnector\API\Pipe;
 
 abstract class AbstractRepository {
 	use EndPoints;

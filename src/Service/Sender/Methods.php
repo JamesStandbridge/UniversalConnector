@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\Sender;
+namespace UniversalConnector\Service\Sender;
 
 trait Methods {
 	public function GET_METHOD() 

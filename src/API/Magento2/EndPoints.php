@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\API\Magento2;
+namespace UniversalConnector\API\Magento2;
 
 trait EndPoints {
 

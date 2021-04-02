@@ -1,6 +1,6 @@
 <?php
 
-namespace App\API;
+namespace UniversalConnector\API;
 
 
 abstract class Pipe {

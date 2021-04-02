@@ -1,10 +1,10 @@
 <?php 
 
-namespace App\API;
+namespace UniversalConnector\API;
 
-use App\API\Magento2\Magento2API;
-use App\Service\Sender\CurlSender;
-use App\API\Magento2\RepositoryProvider;
+use UniversalConnector\API\Magento2\Magento2API;
+use UniversalConnector\Service\Sender\CurlSender;
+use UniversalConnector\API\Magento2\RepositoryProvider;
 
 class APIProvider {
 	public static function Magento2Instance() : Magento2API {

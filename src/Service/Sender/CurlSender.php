@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Sender;
+namespace UniversalConnector\Service\Sender;
 
-use App\Service\Sender\Methods;
+use UniversalConnector\Service\Sender\Methods;
 
 class CurlSender  {
 	use Methods;

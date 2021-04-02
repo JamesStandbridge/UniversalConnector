@@ -1,5 +1,5 @@
 <?php
-namespace App\API\Exception;
+namespace UniversalConnector\API\Exception;
 
 use Exception;
 use RuntimeException;
