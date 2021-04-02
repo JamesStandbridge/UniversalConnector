@@ -7,7 +7,7 @@
             "email": "james.standbridge.git@gmail.com"
         }
     ],
-    "minimum-stability": "0.0.5",
+    "minimum-stability": "dev",
 
     "require": {
         "php": ">=5.3.0"
