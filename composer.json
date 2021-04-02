@@ -1,0 +1,17 @@
+{
+    "name": "james/script-tiers-prices",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "jamesstandbridge",
+            "email": "james.standbridge.git@gmail.com"
+        }
+    ],
+    "require": {},
+    
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
