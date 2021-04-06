@@ -35,7 +35,7 @@ class PriceRepository extends AbstractRepository {
 	 * 
 	 * @return Website response
 	 */
-	public function POST_TierPrices(array $tierPrices, array $filters = null) {
+	public function POST_tierPrices(array $tierPrices, array $filters = null) {
 		$endPoint = $this->POST_TIER_PRICES();
 		if($filters) $endPoint .= FilterBuilder::build($filters);
 

@@ -20,4 +20,4 @@ $tierPrices = [
 	}
 ]	
 
-$response = $api->postTierPrice($tierPrices);
+$response = $api->POST_tierPrices($tierPrices);

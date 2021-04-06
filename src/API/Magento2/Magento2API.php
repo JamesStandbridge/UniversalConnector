@@ -31,8 +31,8 @@ class Magento2API extends AbstractAPI {
 
 
 
-	
-	public function postTierPrices(array $tierPrices) 
+
+	public function POST_tierPrices(array $tierPrices) 
 	{
 		$repository = $this->repoProvider->getRepository('price', $this->pipe);
 		return $repository->POST_TierPrices($tierPrices);
