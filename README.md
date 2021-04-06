@@ -1,4 +1,10 @@
-# Boeki Bootstrap Application
+# Boeki UniversalConnector
+
+## Versions
+
+| Versions | Date | Features |
+| --- | --- | --- |
+| v1.0.0 | 06/04/2021 | Magento2 API |
 
 ## Requirements
 
