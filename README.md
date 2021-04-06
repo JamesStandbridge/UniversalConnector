@@ -34,17 +34,4 @@ $api->setWebsite($website_id);
 
 | HTTP | Method | Arguments | Description |
 | --- | --- | --- | --- | 
-| POST | POST_tierPrices | $tierPrices[] | post a list of tier prices * [
-	 * 		{
-	 *   		price: 					0
-	 *     		price_type: 			string
-	 *       	website_id: 			0
-	 *        	sku: 					string
-	 *         	customer_group:			string
-	 *          quantity:				0
-	 *          extension_attributes:	{}
-	 * 		},
-	 *   	...
-	 * ] 
-
-	|
+| POST | POST_tierPrices | $tierPrices[] | post a list of tier prices [<br>{<br>price: 					0<br>price_type:		string<br>website_id: 			0<br>sku: 					string<br>customer_group:			string<br>quantity:				0<br>extension_attributes:	{}<br>},<br>...<br>] |
