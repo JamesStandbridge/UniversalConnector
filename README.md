@@ -34,4 +34,4 @@ $api->setWebsite($website_id);
 
 | HTTP | Method | Arguments | Description |
 | --- | --- | --- | --- | 
-| POST | POST_tierPrices | $tierPrices[] | post a list of tier prices [<br>{<br>price: 					0<br>price_type:		string<br>website_id: 			0<br>sku: 					string<br>customer_group:			string<br>quantity:				0<br>extension_attributes:	{}<br>},<br>...<br>] |
+| POST | POST_tierPrices | array tierPrices | Add or update product prices. If any items will have invalid price, price type, website id, sku, customer group or quantity, they will be marked as failed and excluded from update list and \Magento\Catalog\Api\Data\PriceUpdateResultInterface[] with problem description will be returned. If there were no failed items during update empty array will be returned. If error occurred during the update exception will be thrown. |
