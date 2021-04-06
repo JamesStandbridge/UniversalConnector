@@ -28,15 +28,23 @@ class Magento2API extends AbstractAPI {
 		parent::__construct($HTTPservice);
 	}
 
-	public function postTierPrice() {
-		$repository = $this->repoProvider->getRepository('price', $this->pipe);
-		$repository->hello();
-	}
 
+
+
+	
+	public function postTierPrices(array $tierPrices) 
+	{
+		$repository = $this->repoProvider->getRepository('price', $this->pipe);
+		return $repository->POST_TierPrices($tierPrices);
+	}
 
 	/**
 	 * Context 
 	 */
+	public function setWebsite(int $website_id) 
+	{
+		$this->context->setWebsiteID($website_id);
+	}
 
 	/**
 	 * SECURITY

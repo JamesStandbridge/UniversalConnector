@@ -9,4 +9,5 @@ trait EndPoints {
 	public function GET_PRODUCTS_EP() {return "/rest/all/V1/products";}
 
 	//POST
+	public function POST_TIER_PRICES() {return "/rest/all/V1/products/tier-prices";}
 }
