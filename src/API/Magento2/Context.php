@@ -7,10 +7,7 @@ class Context {
 
 	private $website_id;
 
-	public function __construct() 
-	{
-		$this->website_id = $website_id;
-	}
+	public function __construct() {}
 
 	public function setWebsiteID(int $website_id) 
 	{
