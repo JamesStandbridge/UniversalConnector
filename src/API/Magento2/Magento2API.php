@@ -28,11 +28,16 @@ class Magento2API extends AbstractAPI {
 		parent::__construct($HTTPservice);
 	}
 
-
-	public function POST_product(array $productData) 
+	public function GET_product(string $sku) 
 	{
 		$repository = $this->repoProvider->getRepository('product', $this->pipe);
-		return $repository->POST_product($productData);
+		return $repository->GET_product($sku);
+	}
+
+	public function POST_product(array $productData, string $store_code) 
+	{
+		$repository = $this->repoProvider->getRepository('product', $this->pipe);
+		return $repository->POST_product($productData, $store_code);
 	}
 
 

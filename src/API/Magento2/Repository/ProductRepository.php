@@ -21,8 +21,9 @@ class ProductRepository extends AbstractRepository {
 	 * 
 	 * @return Website response
 	 */
-	public function POST_product(array $productData, array $filters = null) {
-		$endPoint = $this->POST_PRODUCT();
+	public function POST_product(array $productData, string $store_code, array $filters = null) 
+	{
+		$endPoint = $this->POST_PRODUCT_EP($store_code);
 		if($filters) $endPoint .= FilterBuilder::build($filters);
 
 		$response = $this->HTTPservice->POST(
@@ -33,6 +34,25 @@ class ProductRepository extends AbstractRepository {
 		);
 
 		return $response;
+	}
+
+	/**
+	 * GET product from an Magento2 EndPoint
+	 * @param string     $sku    
+	 * @param array|null $filters 
+	 */
+	public function GET_product(string $sku, array $filters = null) 
+	{
+		$endPoint = $this->GET_PRODUCT_EP($sku);
+		if($filters) $endPoint .= FilterBuilder::build($filters);
+
+		$product = $this->HTTPservice->GET(
+			$this->pipe->getDomain(),
+			$endPoint,
+			array("type" => "Authorization: Bearer ", "token" => $this->pipe->getToken())
+		);
+
+		return json_decode(json_encode($product), true);	
 	}
 }
 

@@ -7,6 +7,7 @@ trait EndPoints {
 	//GET
 	public function GET_TOKEN_EP() {return "/rest/V1/integration/admin/token";}
 	public function GET_PRODUCTS_EP() {return "/rest/all/V1/products";}
+	public function GET_PRODUCT_EP(string $sku) {return "/rest/all/V1/products/$sku";}
 
 	//POST
 	public function POST_TIER_PRICES() {return "/rest/all/V1/products/tier-prices";}
