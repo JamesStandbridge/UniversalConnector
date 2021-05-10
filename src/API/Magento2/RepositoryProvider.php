@@ -6,6 +6,7 @@ use UniversalConnector\Service\Sender\CurlSender;
 
 use UniversalConnector\API\Magento2\Repository\PriceRepository;
 use UniversalConnector\API\Magento2\Repository\ProductRepository;
+use UniversalConnector\API\Magento2\Repository\SourceRepository;
 
 use UniversalConnector\API\Pipe;
 
@@ -21,11 +22,14 @@ class RepositoryProvider {
 	{
 		switch($class) 
 		{
-			case "price" :
+			case "price":
 				return new PriceRepository($this->HTTPservice, $pipe);
 
-			case "product" :
+			case "product":
 				return new ProductRepository($this->HTTPservice, $pipe);
+
+			case "source":
+				return new SourceRepository($this->HTTPservice, $pipe);
 
 			default:
 				throw new \LogicException("Invalid className repository");
