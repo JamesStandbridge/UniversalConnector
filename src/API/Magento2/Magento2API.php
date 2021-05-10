@@ -29,13 +29,17 @@ class Magento2API extends AbstractAPI {
 	}
 
 
-
+	public function POST_product(array $productData) 
+	{
+		$repository = $this->repoProvider->getRepository('product', $this->pipe);
+		return $repository->POST_product($productData);
+	}
 
 
 	public function POST_tierPrices(array $tierPrices) 
 	{
 		$repository = $this->repoProvider->getRepository('price', $this->pipe);
-		return $repository->POST_TierPrices($tierPrices);
+		return $repository->POST_tierPrices($tierPrices);
 	}
 
 	/**
