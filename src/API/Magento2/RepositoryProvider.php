@@ -7,6 +7,7 @@ use UniversalConnector\Service\Sender\CurlSender;
 use UniversalConnector\API\Magento2\Repository\PriceRepository;
 use UniversalConnector\API\Magento2\Repository\ProductRepository;
 use UniversalConnector\API\Magento2\Repository\SourceRepository;
+use UniversalConnector\API\Magento2\Repository\AttributeRepository;
 
 use UniversalConnector\API\Pipe;
 
@@ -30,6 +31,9 @@ class RepositoryProvider {
 
 			case "source":
 				return new SourceRepository($this->HTTPservice, $pipe);
+
+			case "attribute":
+				return new AttributeRepository($this->HTTPservice, $pipe);
 
 			default:
 				throw new \LogicException("Invalid className repository");

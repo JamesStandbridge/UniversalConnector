@@ -28,6 +28,25 @@ class Magento2API extends AbstractAPI {
 		parent::__construct($HTTPservice);
 	}
 
+	public function GET_attribute_option(string $attributeCode, string $optionValue)
+	{
+		$repository = $this->repoProvider->getRepository('attribute', $this->pipe);
+
+		$filters = ["filterGroups" => [
+			[
+				"filters" => [
+					[
+						"field" => "label",
+						"value" => $optionValue,
+						"condition_type" => "eq"
+					]
+				]
+			]
+		]];
+
+		return $repository->GET_attribute_option($attributeCode);
+	}
+
 	public function POST_source_items(array $sourceItems)
 	{
 		$repository = $this->repoProvider->getRepository('source', $this->pipe);
