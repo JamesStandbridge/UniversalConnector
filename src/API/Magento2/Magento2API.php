@@ -36,7 +36,7 @@ class Magento2API extends AbstractAPI {
 		);
 		$repository = $this->repoProvider->getRepository('attribute', $this->pipe);
 		$option = $repository->POST_attribute_option($attributeCode, $optionData);
-		return $option["content"];
+		return intVal($option["content"]);
 	}
 
 	public function GET_attribute_option(string $attributeCode, string $optionValue) : ?int
