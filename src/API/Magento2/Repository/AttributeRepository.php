@@ -26,6 +26,18 @@ class AttributeRepository extends AbstractRepository {
 
 		return json_decode(json_encode($product), true);
 	}
+
+	public function POST_attribute_option(string $attributeCode, array $optionData, $filters = null) 
+	{
+		$response = $this->HTTPservice->POST(
+			$this->pipe->getDomain(),
+			$this->POST_ATTRIBUTE_OPTION_EP($attributeCode),
+			array("option" => $optionData),
+			array("type" => "Authorization: Bearer ", "token" => $this->pipe->getToken())
+		);
+
+		return $response;
+	}
 }
 
 //GET(string $domain, string $endpoint, string $auth, array $headers);

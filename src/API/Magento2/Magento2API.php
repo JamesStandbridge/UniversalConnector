@@ -28,7 +28,18 @@ class Magento2API extends AbstractAPI {
 		parent::__construct($HTTPservice);
 	}
 
-	public function GET_attribute_option(string $attributeCode, string $optionValue)
+	public function POST_attribute_option(string $attributeCode, string $optionValue)
+	{
+		$optionData = array(
+			'label' => $optionValue,
+			'value' => '',
+		);
+		$repository = $this->repoProvider->getRepository('attribute', $this->pipe);
+		$option = $repository->POST_attribute_option($attributeCode, $optionData);
+		return $option["content"];
+	}
+
+	public function GET_attribute_option(string $attributeCode, string $optionValue) : ?int
 	{
 		$repository = $this->repoProvider->getRepository('attribute', $this->pipe);
 
@@ -44,7 +55,13 @@ class Magento2API extends AbstractAPI {
 			]
 		]];
 
-		return $repository->GET_attribute_option($attributeCode, $filters);
+		$options = $repository->GET_attribute_option($attributeCode, $filters);
+		$options = $options["content"];
+
+		foreach($options as $option) {
+			if($option["label"] === $optionValue) return intVal($option["value"]);
+		}
+		return null;
 	}
 
 	public function POST_source_items(array $sourceItems)

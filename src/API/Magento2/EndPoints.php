@@ -14,4 +14,5 @@ trait EndPoints {
 	public function POST_TIER_PRICES() {return "/rest/all/V1/products/tier-prices";}
 	public function POST_PRODUCT_EP(string $store_code) {return "/rest/$store_code/V1/products";}
 	public function POST_SOURCE_ITEMS_EP() {return "/rest/all/V1/inventory/source-items";}
+	public function POST_ATTRIBUTE_OPTION_EP(string $attributeCode) {return "/rest/all/V1/products/attributes/$attributeCode/options";}
 }
