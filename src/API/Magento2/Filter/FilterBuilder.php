@@ -1,6 +1,6 @@
 <?php
+namespace UniversalConnector\API\Magento2\Filter;
 
-namespace App\Modules\EshopSync\Magento2\Filter;
 
 class FilterBuilder {
 
