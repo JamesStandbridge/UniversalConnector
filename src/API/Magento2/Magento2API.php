@@ -44,7 +44,7 @@ class Magento2API extends AbstractAPI {
 			]
 		]];
 
-		return $repository->GET_attribute_option($attributeCode);
+		return $repository->GET_attribute_option($attributeCode, $filters);
 	}
 
 	public function POST_source_items(array $sourceItems)
