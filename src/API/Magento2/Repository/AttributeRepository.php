@@ -2,12 +2,15 @@
 
 namespace UniversalConnector\API\Magento2\Repository;
 
-use UniversalConnector\API\AbstractRepository;
+use UniversalConnector\API\AbstractClass\Bearer\AbstractRepository;
 use UniversalConnector\Service\Sender\CurlSender;
-use UniversalConnector\API\Pipe;
+use UniversalConnector\API\AbstractClass\Bearer\Pipe;
 use UniversalConnector\API\Magento2\Filter\FilterBuilder;
+use UniversalConnector\API\Magento2\EndPoints;
 
 class AttributeRepository extends AbstractRepository {
+
+	use EndPoints;
 
 	public function __construct(CurlSender $HTTPservice, Pipe $pipe)
 	{

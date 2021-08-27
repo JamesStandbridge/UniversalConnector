@@ -2,7 +2,7 @@
 
 namespace UniversalConnector\API\Magento2;
 
-use UniversalConnector\API\Pipe;
+use UniversalConnector\API\AbstractClass\Bearer\Pipe;
 
 class Magento2Pipe extends Pipe {
 	private $username;

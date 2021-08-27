@@ -1,14 +1,14 @@
 <?php 
 
-namespace UniversalConnector\API;
+namespace UniversalConnector\API\AbstractClass\Key;
 
 use UniversalConnector\Service\Sender\CurlSender;
-use UniversalConnector\API\Magento2\EndPoints;
 
-use UniversalConnector\API\Pipe;
+
+use UniversalConnector\API\AbstractClass\Key\Pipe;
 
 abstract class AbstractRepository {
-	use EndPoints;
+
 	
 	protected $HTTPservice;
 	protected $pipe;

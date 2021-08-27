@@ -12,4 +12,14 @@ trait Methods {
 	{
 		return "POST";
 	}
+
+	public function DELETE_METHOD()
+	{
+		return "DELETE";
+	}
+
+	public function PUT_METHOD()
+	{
+		return "PUT";
+	}
 }

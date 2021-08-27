@@ -9,7 +9,7 @@ use UniversalConnector\API\Magento2\Repository\ProductRepository;
 use UniversalConnector\API\Magento2\Repository\SourceRepository;
 use UniversalConnector\API\Magento2\Repository\AttributeRepository;
 
-use UniversalConnector\API\Pipe;
+use UniversalConnector\API\AbstractClass\Bearer\Pipe;
 
 class RepositoryProvider {
 	private $HTTPservice;

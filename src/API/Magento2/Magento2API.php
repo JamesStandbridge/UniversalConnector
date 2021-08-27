@@ -3,7 +3,7 @@
 
 namespace UniversalConnector\API\Magento2;
 
-use UniversalConnector\API\AbstractAPI;
+use UniversalConnector\API\AbstractClass\Bearer\AbstractAPI;
 use UniversalConnector\API\Exception\PipeException;
 
 use UniversalConnector\API\Magento2\Context;
