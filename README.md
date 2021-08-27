@@ -1,10 +1,14 @@
+
 # Boeki UniversalConnector
+
+UniversalConnector is a native PHP library allowing the instantiation of a multitude of common APIs on the market. The library is updated regularly with the contribution of new instances and new methods within the API.
 
 ## Versions
 
 | Versions | Date | Features |
 | --- | --- | --- |
 | v1.0.0 | 06/04/2021 | Magento2 API |
+| v2.0.0 | 27/08/2021 | SendinBlue API |
 
 ## Requirements
 
@@ -22,17 +26,26 @@ composer require boeki/universal-connector
 ### Instantiating the desired API class
 
 ```php
+# Magento
 $api = APIProvider::Magento2Instance();
+
+# SendinBlue
+$api = APIProvider::SendinBleuInstance();
 ```
 
 ### Initialization of the connection pipe
 
 ```php
+# Magento
 $api->initialize("username", "password", "http://example.com");
+
+# SendinBlue
+$api->initialize("xkeysib-5bbxxxxxxxxxxxxxxxx");
 ```
 
-Optional: you can provide a default website ID for the next request
+Optional: you can provide a default website ID for the next request for Magento2
 ```php
+# Magento
 $api->setWebsite($website_id);
 ```
 
@@ -41,3 +54,14 @@ $api->setWebsite($website_id);
 | HTTP | Method | Arguments | Description |
 | --- | --- | --- | --- | 
 | POST | POST_tierPrices | array tierPrices | Add or update product prices. If any items will have invalid price, price type, website id, sku, customer group or quantity, they will be marked as failed and excluded from update list and \Magento\Catalog\Api\Data\PriceUpdateResultInterface[] with problem description will be returned. If there were no failed items during update empty array will be returned. If error occurred during the update exception will be thrown. |
+
+## SendinBlue methods
+
+| HTTP | Method | Arguments | Description |
+| --- | --- | --- | --- | 
+| GET | GET_all_contacts | array filters | Get all contacts with pagination filters |
+| POST | POST_contact | array httpbody | Post one contact |
+| POST | POST_contacts | array httpbody | Import multiple contacts from an FileBody CSV style |
+| PUT | UPDATE_contact | string identifier, array httpbody | Update attribute and RGPD of one contact. Identifier can be the email or the contact's system ID |
+| DELETE | DELETE_contact | array identifier | Delete one contact from the SendinBlue database. Identifier can be the email or the contact's system ID |
+| GET | GET_account | N\A | Get current API Key account informations |
