@@ -92,9 +92,9 @@ $response = $api->POST_contacts(
 
 | HTTP | Method | Arguments | Description |
 | --- | --- | --- | --- | 
-| GET | GET_all_contacts | array filters | Get all contacts with pagination filters |
-| POST | POST_contact | array httpbody | Post one contact |
-| POST | POST_contacts | array httpbody | Import multiple contacts from an FileBody CSV style |
-| PUT | UPDATE_contact | string identifier, array httpbody | Update attribute and RGPD of one contact. Identifier can be the email or the contact's system ID |
-| DELETE | DELETE_contact | array identifier | Delete one contact from the SendinBlue database. Identifier can be the email or the contact's system ID |
+| GET | GET_all_contacts | int limit = 50,<br> int offset = 0,<br> string sort = "desc",<br> \DateTime modifiedSince = null | Get all contacts with pagination filters |
+| POST | POST_contact | string email,<br> array attributes,<br> array listIds,<br> bool updateEnabled,<br> bool emailBlacklisted,<br> bool smsBlacklisted | Post one contact |
+| POST | POST_contacts | string fileBody,<br> array listIds = null,<br> array newList = null,<br> bool updateExistingContacts = true,<br> bool emptyContactsAttributes = false,<br> string notifyUrl = null,<br> bool emailBlacklist = false,<br> bool smsBlacklist = false | Import multiple contacts from an FileBody CSV style |
+| PUT | UPDATE_contact | string identifier,<br>array attributes = null,<br> bool emailBlacklisted = null,<br> bool smsBlacklisted = null | Update attribute and RGPD of one contact. Identifier can be the email or the contact's system ID |
+| DELETE | DELETE_contact | string identifier | Delete one contact from the SendinBlue database. Identifier can be the email or the contact's system ID |
 | GET | GET_account | N\A | Get current API Key account informations |
