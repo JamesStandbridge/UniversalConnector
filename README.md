@@ -30,7 +30,7 @@ composer require boeki/universal-connector
 $api = APIProvider::Magento2Instance();
 
 # SendinBlue
-$api = APIProvider::SendinBleuInstance();
+$api = APIProvider::SendinBlueInstance();
 ```
 
 ### Initialization of the connection pipe
