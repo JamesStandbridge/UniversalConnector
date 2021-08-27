@@ -16,7 +16,7 @@ UniversalConnector is a native PHP library allowing the instantiation of a multi
 
 ## Installation
 
-```shell
+```bash
 # composer
 composer require boeki/universal-connector
 ```
@@ -48,6 +48,39 @@ Optional: you can provide a default website ID for the next request for Magento2
 # Magento
 $api->setWebsite($website_id);
 ```
+### Request examples
+
+```php
+
+# SendinBlue
+use UniversalConnector\API\APIProvider;
+use UniversalConnector\API\SendinBlue\Builder\SendinBlueTools;
+
+$api = APIProvider::SendinBleuInstance();
+$api->initialize("xkeysib-5bbxxxxxxxxxxxxxxxx");
+
+$fileBody = SendinBlueTools::CONTACTS_FILE_BODY(
+	["EMAIL","NOM","PRENOM","SMS"],
+	[
+		["james@example.com","Standbridge","James","972542116060"],
+		["Vanessa@example.com","Lucas","Vanessa","972542116061"],
+		["Arthur@example.com","Arnold","Arthur","972542116063"]
+	]
+);
+
+
+$response = $api->POST_contacts(
+	$fileBody, 
+	null, 
+	["listName" => "Universal-connector_list_test", "folderId" => 9],
+	true, 
+	false, 
+	null, 
+	false, 
+	false
+);
+```
+
 
 ## Magento2 methods
 
