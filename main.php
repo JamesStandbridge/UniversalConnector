@@ -65,3 +65,8 @@ var_dump($api->POST_contacts(
 		"NOM" => "Lucas",
 	)
 ));*/
+
+
+$api = APIProvider::MailChimpInstance();
+$api->initialize("1138b9937c4daeec18571b25d9f91e5b-us3");
+var_dump($api->ping());

@@ -30,9 +30,10 @@ class CurlBuilder {
 		}
 
 		if(count($this->headers) !== 0) curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
-		
+		var_dump($this->headers);
 		$response = curl_exec($ch);
-		//dump($response);
+		
+		var_dump($response);
 		return array(
 			'content' => json_decode($response), 
 			'code' => curl_getinfo($ch, CURLINFO_HTTP_CODE)

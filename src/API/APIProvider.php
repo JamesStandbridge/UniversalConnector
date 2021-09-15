@@ -8,6 +8,9 @@ use UniversalConnector\API\Magento2\RepositoryProvider as Magento2RepositoryProv
 use UniversalConnector\API\SendinBlue\SendinBlueAPI;
 use UniversalConnector\API\SendinBlue\RepositoryProvider as SendinBleuRepositoryProvider;
 
+use UniversalConnector\API\MailChimp\MailChimpAPI;
+use UniversalConnector\API\MailChimp\RepositoryProvider as MailChimpRepositoryProvider;
+
 use UniversalConnector\Service\Sender\CurlSender;
 
 
@@ -22,5 +25,11 @@ class APIProvider {
 		$sender = new CurlSender();
 		$repoProvider = new SendinBleuRepositoryProvider($sender);
 		return new SendinBlueAPI($sender, $repoProvider);
+	}
+
+	public static function MailChimpInstance() : MailChimpAPI {
+		$sender = new CurlSender();
+		$repoProvider = new MailChimpRepositoryProvider($sender);
+		return new MailChimpAPI($sender, $repoProvider);
 	}
 }
