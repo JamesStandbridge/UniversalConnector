@@ -28,6 +28,15 @@ class MailChimpAPI extends AbstractAPI {
 		parent::__construct($HTTPservice);
 	}
 
+	public function GET_lists()
+	{
+		$repository = $this->repoProvider->getRepository('list', $this->pipe);
+
+		$lists = $repository->GET_lists();
+
+		return $lists;
+	}
+
 	public function ping()
 	{
 		$repository = $this->repoProvider->getRepository('security', $this->pipe);

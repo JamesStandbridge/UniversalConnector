@@ -7,6 +7,7 @@ use UniversalConnector\API\AbstractClass\Bearer\Pipe;
 
 
 use UniversalConnector\API\MailChimp\Repository\SecurityRepository;
+use UniversalConnector\API\MailChimp\Repository\ListRepository;
 
 
 class RepositoryProvider {
@@ -24,6 +25,9 @@ class RepositoryProvider {
 			case "security":
 				return new SecurityRepository($this->HTTPservice, $pipe);
 
+			case "list":
+				return new ListRepository($this->HTTPservice, $pipe);
+				
 			default:
 				throw new \LogicException("Invalid className repository");
 		}
