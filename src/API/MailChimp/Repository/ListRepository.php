@@ -16,10 +16,22 @@ class ListRepository extends AbstractRepository {
 		parent::__construct($HTTPservice, $pipe);
 	}
 
-	public function GET_lists() {
+	public function GET_lists() 
+	{
 		$response = $this->HTTPservice->GET(
 			$this->pipe->getDomain(),
 			$this->GET_LISTS_EP(),
+			array("type" => "Authorization: ", "token" => $this->pipe->getAPIKey())
+		);
+
+		return json_decode(json_encode($response), true);
+	}
+
+	public function GET_list_members(string $listID)
+	{
+		$response = $this->HTTPservice->GET(
+			$this->pipe->getDomain(),
+			$this->GET_LIST_MEMBERS_EP($listID),
 			array("type" => "Authorization: ", "token" => $this->pipe->getAPIKey())
 		);
 
