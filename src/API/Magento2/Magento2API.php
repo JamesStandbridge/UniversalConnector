@@ -157,4 +157,9 @@ class Magento2API extends AbstractAPI {
 
 		$this->pipe->setToken($response["content"]);
 	}
+
+	public function getToken(): ?string
+	{
+		return $this->pipe->getToken();
+	}
 }
