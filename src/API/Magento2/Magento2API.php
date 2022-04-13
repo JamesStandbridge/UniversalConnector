@@ -82,10 +82,10 @@ class Magento2API extends AbstractAPI {
 		return $repository->POST_product($productData, $store_code);
 	}
 
-	public function PUT_product(array $productData, string $store_code)
+	public function PUT_product(string $sku, array $productData, string $store_code)
 	{
 		$repository = $this->repoProvider->getRepository('product', $this->pipe);
-		return $repository->PUT_product($productData, $store_code);
+		return $repository->PUT_product($sku, $productData, $store_code);
 	}
 
 	public function POST_tierPrices(array $tierPrices) 
