@@ -40,6 +40,29 @@ class ProductRepository extends AbstractRepository {
 	}
 
 	/**
+	 * PUT product to Magento2 Endpoint (usefull to update a product)
+	 * @param array $productData
+	 * @param array|null $filters
+	 * 
+	 * @return Website response
+	 */
+	public function PUT_product(array $productData, string $store_code, array $filters = null) 
+	{
+		$endPoint = $this->PUT_PRODUCT_EP($store_code);
+		if($filters) $endPoint .= FilterBuilder::build($filters);
+
+		$response = $this->HTTPservice->PUT(
+			$this->pipe->getDomain(),
+			$endPoint,
+			array("product" => $productData),
+			array("type" => "Authorization: Bearer ", "token" => $this->pipe->getToken())
+		);
+
+		return $response;
+	}
+
+
+	/**
 	 * GET product from an Magento2 EndPoint
 	 * @param string     $sku    
 	 * @param array|null $filters 
