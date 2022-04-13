@@ -20,11 +20,6 @@ class Magento2Pipe extends Pipe {
 		return $this;
 	}	
 
-	public function getToken(): ?string
-	{
-		return $this->token;
-	}
-
 	public function setDomain(string $domain) : self
 	{
 		$this->domain = $domain;
